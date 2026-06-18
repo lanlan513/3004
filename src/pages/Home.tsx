@@ -1,3 +1,4 @@
+import { useRef } from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { Brain, Zap, BookOpen, ChevronRight } from "lucide-react";
@@ -36,12 +37,18 @@ const stats = [
 ];
 
 export default function Home() {
+  const brainRef = useRef<HTMLDivElement>(null);
+
+  const handleStartInteraction = () => {
+    brainRef.current?.scrollIntoView({ behavior: "smooth", block: "center" });
+  };
+
   return (
     <div className="relative min-h-screen bg-cyber-bg text-white overflow-hidden">
       <ParticleBackground />
       <Navbar />
 
-      <section className="relative z-10 min-h-screen flex flex-col lg:flex-row items-center justify-center px-6 pt-24 pb-16 gap-12">
+      <section ref={brainRef} className="relative z-10 min-h-screen flex flex-col lg:flex-row items-center justify-center px-6 pt-24 pb-16 gap-12">
         <motion.div
           className="flex-1 max-w-xl text-center lg:text-left"
           initial={{ opacity: 0, x: -60 }}
@@ -93,7 +100,7 @@ export default function Home() {
               进入百科
               <ChevronRight className="w-4 h-4" />
             </Link>
-            <button className="neon-btn inline-flex items-center justify-center gap-2" style={{ borderColor: "#ff00aa", color: "#ff00aa" }}>
+            <button onClick={handleStartInteraction} className="neon-btn inline-flex items-center justify-center gap-2" style={{ borderColor: "#ff00aa", color: "#ff00aa" }}>
               <Brain className="w-4 h-4" />
               开始交互
             </button>

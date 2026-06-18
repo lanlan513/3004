@@ -178,7 +178,7 @@ export default function InfoPanel() {
                 transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
               />
 
-              <div className="relative h-full overflow-y-auto custom-scrollbar p-6">
+              <div className="relative h-full overflow-y-auto custom-scrollbar pt-20 p-6">
                 <div className="flex justify-between items-start mb-6">
                   <div className="flex-1">
                     <motion.h1
