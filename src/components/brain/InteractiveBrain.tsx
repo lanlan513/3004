@@ -295,14 +295,6 @@ export default function InteractiveBrain() {
           {regionConfigs.map((region) => {
             const isHovered = hoveredRegion === region.id;
             const isSelected = selectedRegion === region.id;
-            const filterId =
-              region.color === "#8b5cf6"
-                ? "glow-purple"
-                : region.color === "#00f0ff"
-                ? "glow-cyan"
-                : region.color === "#00ff88"
-                ? "glow-green"
-                : "glow-pink";
 
             return (
               <motion.g

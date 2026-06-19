@@ -94,7 +94,6 @@ export default function NeuronSignalSimulation() {
   const [isPlaying, setIsPlaying] = useState(false);
   const [currentStep, setCurrentStep] = useState(0);
   const [progress, setProgress] = useState(0);
-  const [signalPosition, setSignalPosition] = useState(0);
   const [currentPhase, setCurrentPhase] = useState<SignalStep["phase"]>("resting");
   const animationRef = useRef<number | null>(null);
   const startTimeRef = useRef<number>(0);
@@ -108,7 +107,6 @@ export default function NeuronSignalSimulation() {
     setIsPlaying(false);
     setCurrentStep(0);
     setProgress(0);
-    setSignalPosition(0);
     setCurrentPhase("resting");
     startTimeRef.current = 0;
   }, []);
@@ -123,7 +121,6 @@ export default function NeuronSignalSimulation() {
       const newProgress = Math.min(elapsed / totalDuration, 1);
       
       setProgress(newProgress);
-      setSignalPosition(newProgress * 100);
 
       let step: SignalStep | undefined;
       for (let i = signalSteps.length - 1; i >= 0; i--) {

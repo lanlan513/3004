@@ -112,7 +112,7 @@ export default function Home() {
             animate={{ opacity: 1 }}
             transition={{ delay: 1, duration: 0.8 }}
           >
-            {stats.map((s, i) => (
+            {stats.map((s) => (
               <div key={s.label} className="text-center lg:text-left">
                 <div className="font-display text-2xl text-cyber-cyan glow-text">{s.value}</div>
                 <div className="text-xs text-gray-500 mt-1 font-mono tracking-wide">{s.label}</div>
