@@ -5,6 +5,7 @@ import Navbar from "@/components/layout/Navbar";
 import AnimatedSection from "@/components/shared/AnimatedSection";
 import BrainRegions from "@/components/encyclopedia/BrainRegions";
 import NeuronStructure from "@/components/encyclopedia/NeuronStructure";
+import NeuronSignalSimulation from "@/components/encyclopedia/NeuronSignalSimulation";
 import Neurotransmitters from "@/components/encyclopedia/Neurotransmitters";
 
 export default function Encyclopedia() {
@@ -49,6 +50,7 @@ export default function Encyclopedia() {
               {[
                 { label: "脑区解剖", color: "#00f0ff" },
                 { label: "神经元结构", color: "#ffd700" },
+                { label: "信号传导", color: "#00ff88" },
                 { label: "神经递质", color: "#ff00aa" },
               ].map((tag, i) => (
                 <motion.div
@@ -74,6 +76,7 @@ export default function Encyclopedia() {
       <div className="relative z-10">
         <BrainRegions />
         <NeuronStructure />
+        <NeuronSignalSimulation />
         <Neurotransmitters />
       </div>
 
