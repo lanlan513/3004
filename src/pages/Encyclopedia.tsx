@@ -9,6 +9,7 @@ import NeuronSignalSimulation from "@/components/encyclopedia/NeuronSignalSimula
 import BrainFunctionMap from "@/components/encyclopedia/BrainFunctionMap";
 import Neurotransmitters from "@/components/encyclopedia/Neurotransmitters";
 import NeurotransmitterLab from "@/components/encyclopedia/NeurotransmitterLab";
+import MemoryFormationSimulator from "@/components/encyclopedia/MemoryFormationSimulator";
 
 export default function Encyclopedia() {
   const scrollToTop = () => {
@@ -56,6 +57,7 @@ export default function Encyclopedia() {
                 { label: "信号传导", color: "#00ff88" },
                 { label: "神经递质", color: "#ff00aa" },
                 { label: "递质实验室", color: "#8b5cf6" },
+                { label: "记忆形成", color: "#00f0ff" },
               ].map((tag, i) => (
                 <motion.div
                   key={tag.label}
@@ -84,6 +86,7 @@ export default function Encyclopedia() {
         <NeuronSignalSimulation />
         <Neurotransmitters />
         <NeurotransmitterLab />
+        <MemoryFormationSimulator />
       </div>
 
       <section className="relative z-10 py-20 px-6 border-t border-cyber-cyan/10">
